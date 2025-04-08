@@ -74,6 +74,10 @@ function App() {
     setProducts(products.filter(product => product.id !== id))
   }
 
+  const handleDeleteAll = () => {
+    setProducts([])
+  }
+
   return (
     <div className="container">
       <h1>Gestión de Inventario</h1>
@@ -112,6 +116,9 @@ function App() {
         <h2>Lista de Productos</h2>
         {products.length > 0 ? (
           <>
+            <button onClick={handleDeleteAll} className="delete-all">
+              Eliminar Todos los Productos
+            </button>
             <table>
               <thead>
                 <tr>
